@@ -1,5 +1,5 @@
 import React from "react";
-import type { Product } from "~/context/CartContext";
+import type { Product } from "src/context/CartContext";
 
 interface Props {
   product: Product;
