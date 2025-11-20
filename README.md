@@ -1,61 +1,400 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# TailAdmin Laravel
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+[TailAdmin](https://tailadmin.com) is a modern, feature-rich admin dashboard template built with Laravel 12, Tailwind CSS v4, Alpine.js, and other cutting-edge frontend technologies. Perfect for building scalable admin panels, CRM systems, and data-driven applications.
 
-## About Laravel
+## Quick Links
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- [✨ Visit Website](https://tailadmin.com)
+- [📄 Documentation](https://tailadmin.com/docs)
+- [⬇️ Download](https://tailadmin.com/download)
+- [🌐 Live Site](https://nextjs-demo.tailadmin.com)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## ✨ Features
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- 🚀 **Laravel 12** - Latest Laravel framework with modern PHP features
+- 🎨 **Tailwind CSS v4** - Utility-first CSS framework for rapid UI development
+- ⚡ **Alpine.js** - Lightweight JavaScript framework for reactive components
+- 📦 **Vite** - Lightning-fast build tool and development server
+- 📱 **Responsive Design** - Mobile-first approach, works on all devices
+- 🌙 **Dark Mode Support** - Beautiful built-in dark theme
+- 📊 **Interactive Components** - Charts, calendars, tables, forms, and more
+- 🎯 **Modern UI Components** - Pre-built components for rapid development
 
-## Learning Laravel
+## 📋 Prerequisites
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Before you begin, ensure you have the following installed on your system:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- **PHP 8.2 or higher** ([Download PHP](https://www.php.net/downloads))
+- **Composer** - PHP dependency manager ([Install Composer](https://getcomposer.org/download/))
+- **Node.js 18+** and **npm** - For frontend assets ([Download Node.js](https://nodejs.org/))
+- **Database** - SQLite (default), MySQL, or PostgreSQL
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### Check Your Environment
 
-## Laravel Sponsors
+Verify your installations:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+```bash
+php -v
+composer -V
+node -v
+npm -v
+```
 
-### Premium Partners
+## 🚀 Quick Start Installation
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### Step 1: Clone the Repository
 
-## Contributing
+```bash
+git clone https://github.com/TailAdmin/free-laravel-admin-dashboard.git
+cd free-laravel-admin-dashboard
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Step 2: Install PHP Dependencies
 
-## Code of Conduct
+```bash
+composer install
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+This command will install all Laravel dependencies defined in `composer.json`.
 
-## Security Vulnerabilities
+### Step 3: Install Node.js Dependencies
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+```bash
+npm install
+```
+
+Or if you prefer yarn or pnpm:
+
+```bash
+# Using yarn
+yarn install
+
+# Using pnpm
+pnpm install
+```
+
+### Step 4: Environment Configuration
+
+Copy the example environment file:
+
+```bash
+cp .env.example .env
+```
+
+**For Windows users:**
+
+```bash
+copy .env.example .env
+```
+
+**Or create it programmatically:**
+
+```bash
+php -r "file_exists('.env') || copy('.env.example', '.env');"
+```
+
+### Step 5: Generate Application Key
+
+```bash
+php artisan key:generate
+```
+
+This creates a unique encryption key for your application.
+
+### Step 6: Configure Database
+
+#### Option A: Using MySQL/PostgreSQL
+
+Update your `.env` file with your database credentials:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=tailadmin_db
+DB_USERNAME=your_username
+DB_PASSWORD=your_password
+```
+
+Create the database:
+
+```bash
+# MySQL
+mysql -u root -p -e "CREATE DATABASE tailadmin_db;"
+
+# PostgreSQL
+createdb tailadmin_db
+```
+
+Run migrations:
+
+```bash
+php artisan migrate
+```
+
+### Step 7: (Optional) Seed the Database
+
+If you want sample data:
+
+```bash
+php artisan db:seed
+```
+
+### Step 8: Storage Link
+
+Create a symbolic link for file storage:
+
+```bash
+php artisan storage:link
+```
+
+## 🏃 Running the Application
+
+### Development Mode (Recommended)
+
+The easiest way to start development is using the built-in script:
+
+```bash
+composer run dev
+```
+
+This single command starts:
+- ✅ Laravel development server (http://localhost:8000)
+- ✅ Vite dev server for hot module reloading
+- ✅ Queue worker for background jobs
+- ✅ Log monitoring
+
+**Access your application at:** [http://localhost:8000](http://localhost:8000)
+
+### Manual Development Setup
+
+If you prefer to run services individually in separate terminal windows:
+
+**Terminal 1 - Laravel Server:**
+```bash
+php artisan serve
+```
+
+**Terminal 2 - Frontend Assets:**
+```bash
+npm run dev
+```
+
+### Building for Production
+
+#### Build Frontend Assets
+
+```bash
+npm run build
+```
+
+#### Optimize Laravel
+
+```bash
+# Clear and cache configuration
+php artisan config:cache
+
+# Cache routes
+php artisan route:cache
+
+# Cache views
+php artisan view:cache
+
+# Optimize autoloader
+composer install --optimize-autoloader --no-dev
+```
+
+#### Production Environment
+
+Update your `.env` for production:
+
+```env
+APP_ENV=production
+APP_DEBUG=false
+APP_URL=https://yourdomain.com
+```
+
+
+## 🧪 Testing
+
+Run the test suite using Pest:
+
+```bash
+composer run test
+```
+
+Or manually:
+
+```bash
+php artisan test
+```
+
+Run with coverage:
+
+```bash
+php artisan test --coverage
+```
+
+Run specific tests:
+
+```bash
+php artisan test --filter=ExampleTest
+```
+
+## 📜 Available Commands
+
+### Composer Scripts
+
+```bash
+# Start development environment
+composer run dev
+
+# Run tests
+composer run test
+
+# Code formatting (if configured)
+composer run format
+
+# Static analysis (if configured)
+composer run analyze
+```
+
+### NPM Scripts
+
+```bash
+# Start Vite dev server
+npm run dev
+
+# Build for production
+npm run build
+
+# Preview production build
+npm run preview
+
+# Lint JavaScript/TypeScript
+npm run lint
+
+# Format code
+npm run format
+```
+
+### Artisan Commands
+
+```bash
+# Start development server
+php artisan serve
+
+# Run migrations
+php artisan migrate
+
+# Rollback migrations
+php artisan migrate:rollback
+
+# Fresh migrations with seeding
+php artisan migrate:fresh --seed
+
+# Generate application key
+php artisan key:generate
+
+# Clear all caches
+php artisan optimize:clear
+
+# Cache everything for production
+php artisan optimize
+
+# Create symbolic link for storage
+php artisan storage:link
+
+# Start queue worker
+php artisan queue:work
+
+# List all routes
+php artisan route:list
+
+# Create a new controller
+php artisan make:controller YourController
+
+# Create a new model
+php artisan make:model YourModel -m
+
+# Create a new migration
+php artisan make:migration create_your_table
+```
+
+## 📁 Project Structure
+
+```
+tailadmin-laravel/
+├── app/                    # Application logic
+│   ├── Http/              # Controllers, Middleware, Requests
+│   ├── Models/            # Eloquent models
+│   └── Providers/         # Service providers
+├── bootstrap/             # Framework bootstrap files
+├── config/                # Configuration files
+├── database/              # Migrations, seeders, factories
+│   ├── migrations/
+│   ├── seeders/
+│   └── factories/
+├── public/                # Public assets (entry point)
+│   ├── build/            # Compiled assets (generated)
+│   └── index.php         # Application entry point
+├── resources/             # Views and raw assets
+│   ├── css/              # Stylesheets (Tailwind)
+│   ├── js/               # JavaScript files (Alpine.js)
+│   └── views/            # Blade templates
+├── routes/                # Route definitions
+│   ├── web.php           # Web routes
+│   ├── api.php           # API routes
+│   └── console.php       # Console routes
+├── storage/               # Logs, cache, uploads
+│   ├── app/
+│   ├── framework/
+│   └── logs/
+├── tests/                 # Pest test files
+│   ├── Feature/
+│   └── Unit/
+├── .env.example           # Example environment file
+├── artisan                # Artisan CLI
+├── composer.json          # PHP dependencies
+├── package.json           # Node dependencies
+├── vite.config.js         # Vite configuration
+└── tailwind.config.js     # Tailwind configuration
+```
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+#### "Class not found" errors
+```bash
+composer dump-autoload
+```
+
+#### Permission errors on storage/bootstrap/cache
+```bash
+chmod -R 775 storage bootstrap/cache
+```
+
+#### NPM build errors
+```bash
+rm -rf node_modules package-lock.json
+npm install
+```
+
+#### Clear all caches
+```bash
+php artisan optimize:clear
+```
+
+#### Database connection errors
+- Check `.env` database credentials
+- Ensure database server is running
+- Verify database exists
+
+## 👥 Author
+
+**Tailadmin Team**
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Refer to our [LICENSE](https://tailadmin.com/license) page for more information.
