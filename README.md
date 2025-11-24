@@ -56,8 +56,8 @@ npm -v
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/TailAdmin/free-laravel-admin-dashboard.git
-cd free-laravel-admin-dashboard
+git clone https://github.com/TailAdmin/tailadmin-laravel.git
+cd tailadmin-laravel
 ```
 
 ### Step 2: Install PHP Dependencies
