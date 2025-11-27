@@ -6,7 +6,7 @@
 
 ## Quick Links
 
-* [✨ Visit Website](https://tailadmin.com)
+* [✨ Get TailAdmin Laravel](https://tailadmin.com/laravel)
 * [📄 Documentation](https://tailadmin.com/docs)
 * [⬇️ Download](https://tailadmin.com/download)
 * [🌐 Live Demo](https://laravel-demo.tailadmin.com)
