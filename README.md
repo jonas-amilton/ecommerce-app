@@ -410,6 +410,11 @@ php artisan optimize:clear
 - Ensure database server is running
 - Verify database exists
 
+## 🔄 Update Log
+
+### [2025-12-29]
+- Added Date Picker in Statistics Chart
+
 ## License
 
 Refer to our [LICENSE](https://tailadmin.com/license) page for more information.
