@@ -874,3 +874,9 @@ pre[class*='language-'] {
         fill: none !important;
     }
 }
+
+@media screen and (max-width: 525px) {
+  .flatpickr-calendar.static {
+    margin-right: -60px !important;
+  }
+}
