@@ -56,6 +56,17 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Application Domain
+    |--------------------------------------------------------------------------
+    |
+    | This domain is used to determine the root domain for the application,
+    | which is useful for setting cookies that are shared across subdomains.
+    |
+    */
+    'domain' => env('APP_DOMAIN'),
+
+    /*
+    |--------------------------------------------------------------------------
     | Application Timezone
     |--------------------------------------------------------------------------
     |
