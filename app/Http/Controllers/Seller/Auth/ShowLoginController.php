@@ -9,10 +9,8 @@ class ShowLoginController extends Controller
 {
     public function __invoke(): View
     {
-        return view('pages.auth.signin', [
+        return view('pages.seller.auth.signin', [
             'title' => 'Seller Sign In',
-            'guard' => 'seller',
-            'loginRoute' => 'seller.login.submit',
         ]);
     }
 }
