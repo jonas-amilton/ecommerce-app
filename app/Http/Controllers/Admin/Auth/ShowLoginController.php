@@ -3,15 +3,16 @@
 namespace App\Http\Controllers\Admin\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class ShowLoginController extends Controller
 {
-    /**
-     * Handle the incoming request.
-     */
-    public function __invoke(Request $request)
+    public function __invoke(): View
     {
-        //
+        return view('pages.auth.signin', [
+            'title' => 'Admin Sign In',
+            'guard' => 'admin',
+            'loginRoute' => 'admin.login.submit',
+        ]);
     }
 }

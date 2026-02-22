@@ -3,6 +3,8 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 return Application::configure(basePath: dirname(__DIR__))
     ->withRouting(
@@ -47,7 +49,37 @@ return Application::configure(basePath: dirname(__DIR__))
         }
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        $middleware->redirectGuestsTo(function (Request $request): ?string {
+            if ($request->routeIs('admin.*') || str_starts_with($request->getHost(), 'admin.')) {
+                return route('admin.login');
+            }
+
+            if ($request->routeIs('seller.*') || str_starts_with($request->getHost(), 'seller.')) {
+                return route('seller.login');
+            }
+
+            if ($request->routeIs('customer.*') || str_starts_with($request->getHost(), 'customer.')) {
+                return route('customer.login');
+            }
+
+            return route('signin');
+        });
+
+        $middleware->redirectUsersTo(function (Request $request): ?string {
+            if ($request->routeIs('admin.*') || str_starts_with($request->getHost(), 'admin.')) {
+                return route('admin.dashboard');
+            }
+
+            if ($request->routeIs('seller.*') || str_starts_with($request->getHost(), 'seller.')) {
+                return route('seller.dashboard');
+            }
+
+            if ($request->routeIs('customer.*') || str_starts_with($request->getHost(), 'customer.')) {
+                return route('customer.dashboard');
+            }
+
+            return route('dashboard');
+        });
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
