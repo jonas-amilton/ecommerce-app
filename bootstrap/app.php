@@ -78,7 +78,7 @@ return Application::configure(basePath: dirname(__DIR__))
                 return route('customer.dashboard');
             }
 
-            return route('dashboard');
+            return route('storefront.home');
         });
     })
     ->withExceptions(function (Exceptions $exceptions): void {
