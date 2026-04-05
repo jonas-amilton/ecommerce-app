@@ -1,16 +1,12 @@
 @extends('layouts.fullscreen-layout')
 
 @section('content')
-    @php
-        $guardLabel = ucfirst($guard ?? 'user');
-        $formAction = isset($loginRoute) ? route($loginRoute, absolute: false) : '#';
-    @endphp
     <div class="relative z-1 bg-white p-6 sm:p-0 dark:bg-gray-900">
         <div class="relative flex h-screen w-full flex-col justify-center sm:p-0 lg:flex-row dark:bg-gray-900">
             <!-- Form -->
             <div class="flex w-full flex-1 flex-col lg:w-1/2">
                 <div class="mx-auto w-full max-w-md pt-10">
-                    <a href="/"
+                    <a href="{{ url('/') }}"
                         class="inline-flex items-center text-sm text-gray-500 transition-colors hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
                         <svg class="stroke-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
                             <path d="M12.7083 5L7.5 10.2083L12.7083 15.4167" stroke="" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -22,7 +18,7 @@
                     <div>
                         <div class="mb-5 sm:mb-8">
                             <h1 class="text-title-sm sm:text-title-md mb-2 font-semibold text-gray-800 dark:text-white/90">
-                                {{ $guardLabel }} Sign In
+                                {{ ucfirst($guard ?? 'user') }} Sign In
                             </h1>
                             <p class="text-sm text-gray-500 dark:text-gray-400">
                                 Enter your email and password to sign in!
@@ -68,7 +64,7 @@
                                     <span class="bg-white p-2 text-gray-400 sm:px-5 sm:py-2 dark:bg-gray-900">Or</span>
                                 </div>
                             </div>
-                            <form method="POST" action="{{ $formAction }}">
+                            <form method="POST" action="{{ route($loginRoute, absolute: false) }}">
                                 @csrf
                                 <div class="space-y-5">
                                     @if ($errors->any())
@@ -131,7 +127,7 @@
                                                 Keep me logged in
                                             </label>
                                         </div>
-                                        <a href="/reset-password" class="text-brand-500 hover:text-brand-600 dark:text-brand-400 text-sm">
+                                        <a href="{{ Route::has('password.request') ? route('password.request', absolute: false) : '#' }}" class="text-brand-500 hover:text-brand-600 dark:text-brand-400 text-sm">
                                             Forgot password?
                                         </a>
                                     </div>
@@ -144,12 +140,14 @@
                                     </div>
                                 </div>
                             </form>
+                            @if (isset($registerRoute))
                             <div class="mt-5">
                                 <p class="text-center text-sm font-normal text-gray-700 sm:text-start dark:text-gray-400">
                                     Don't have an account?
-                                    <a href="/signup" class="text-brand-500 hover:text-brand-600 dark:text-brand-400">Sign Up</a>
+                                    <a href="{{ route($registerRoute, absolute: false) }}" class="text-brand-500 hover:text-brand-600 dark:text-brand-400">Sign Up</a>
                                 </p>
                             </div>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -160,8 +158,8 @@
                     <!-- ===== Common Grid Shape Start ===== -->
                     <x-common.common-grid-shape/>
                     <div class="flex max-w-xs flex-col items-center">
-                        <a href="/" class="mb-4 block">
-                            <img src="./images/logo/auth-logo.svg" alt="Logo" />
+                        <a href="{{ url('/') }}" class="mb-4 block">
+                            <img src="{{ asset('images/logo/auth-logo.svg') }}" alt="Logo" />
                         </a>
                         <p class="text-center text-gray-400 dark:text-white/60">
                             Free and Open-Source Tailwind CSS Admin Dashboard Template

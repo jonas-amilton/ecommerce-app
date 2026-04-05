@@ -2,4 +2,5 @@
     'title' => $title ?? 'Customer Sign In',
     'guard' => 'customer',
     'loginRoute' => 'customer.login.submit',
+    'registerRoute' => 'customer.register',
 ])
